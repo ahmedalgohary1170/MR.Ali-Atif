@@ -243,6 +243,86 @@ nav h2:hover {
     text-shadow: 0 2px 10px rgba(138, 0, 255, 0.3);
 }
 
+/* --- أنماط الوضع الليلي المحسنة (v2) --- */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-theme .background-container img,
+body.dark-theme .foreground-image img {
+    filter: brightness(0.4) saturate(120%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.foreground-image {
+    position: relative; /* ضروري لعمل z-index */
+}
+
+body.dark-theme .navbar {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .nav-link,
+body.dark-theme h2 {
+    color: #f5f5f5 !important;
+}
+
+body.dark-theme .text-box h1,
+body.dark-theme .text-box h3 {
+    color: #ffffff !important;
+}
+
+body.dark-theme .text-box h5 {
+    color: #b0b0b0 !important;
+}
+
+body.dark-theme .text-box h1 span {
+    color: #bb86fc !important;
+}
+
+body.dark-theme .form-control {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    border-color: #444;
+}
+
+body.dark-theme .form-control::placeholder {
+    color: #888;
+}
+
+body.dark-theme .btn-outline-secondary {
+    color: #bb86fc;
+    border-color: #bb86fc;
+}
+
+body.dark-theme .btn-outline-secondary:hover {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+body.dark-theme .letter {
+    background: linear-gradient(45deg, 
+        rgba(187, 134, 252, 0.7), 
+        rgba(3, 218, 197, 0.7)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-theme nav h2:hover,
+body.dark-theme .text-box h3:hover,
+body.dark-theme .text-box h5:hover {
+    color: #bb86fc !important;
+}
+
+body.dark-theme .text-box h1:hover span {
+    color: #9a4cff !important;
+}
+
 /* تأثيرات الحركة عند تحميل الصفحة */
 nav, .text-box, .foreground-image {
     opacity: 0;
