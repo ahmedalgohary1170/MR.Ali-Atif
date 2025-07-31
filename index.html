@@ -74,6 +74,10 @@
 
   </head>
   <body class="background-container">
+    <div id="preloader">
+      <div class="loader-ring"></div>
+      <span class="loader-text">جاري التحميل...</span>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow " style="padding: 10px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -214,5 +218,33 @@
     });
     </script>
 
+    <script>
+      window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        const nav = document.querySelector('nav');
+        const textBox = document.querySelector('.text-box');
+        const foregroundImage = document.querySelector('.foreground-image');
+
+        if (preloader) {
+          setTimeout(() => {
+            preloader.classList.add('loaded');
+
+            // بدء الحركات بعد اختفاء شاشة التحميل
+            setTimeout(() => {
+              if (nav) nav.classList.add('visible');
+            }, 200); // النافبار يظهر أولاً
+
+            setTimeout(() => {
+              if (textBox) textBox.classList.add('visible');
+            }, 500); // صندوق النص يظهر بعده
+
+            setTimeout(() => {
+              if (foregroundImage) foregroundImage.classList.add('visible');
+            }, 800); // الصورة تظهر أخيراً
+
+          }, 500); // مدة عرض شاشة التحميل
+        }
+      });
+    </script>
   </body>
 </html>
